@@ -15,4 +15,5 @@ ld -o double double.o
 ./double
 
 Enter a number: 7 (user input)
+
 The double is: 14 (output)
