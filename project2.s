@@ -1,3 +1,6 @@
+#
+#
+#
 .section .data
 message:    .ascii "Enter a number: "
 messgae_len = . - message
