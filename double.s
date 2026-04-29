@@ -1,12 +1,9 @@
 # double.s
-# Description : Reads an integer from stdin, doubles it and prints the result
-#
+# Desc: Reads an integer from stdin, doubles it and prints the result
 # How to build:
 #   as -o double.o double.s
 #   ld -o double double.o
-#
 # How to run:
-#   echo 7 | ./double
 #   ./double  type a number and enter
 
 # Read-only data 
@@ -49,7 +46,7 @@ _start:
     # rax now holds number of bytes actually read
 
    
-    # 3. Convert ASCII string → integer  (atoi)
+    # 3. Convert ASCII string to integer  (atoi)
     #    Handles an optional leading - if the int is negative, then decimal digits
     #    Result lands in %rbx.
  
@@ -97,8 +94,8 @@ do_double:
     syscall
 
    
-    # 6. Convert integer → ASCII string  (itoa)
-    # We write digits into output_buf from right to left, then shift the slice to the front so we can write() it easily
+    # 6. Convert integer to ASCII string  (itoa)
+    # We write digits into output_buf from right to left then shift the slice to the front so we can write() it easily
 
     lea     output_buf(%rip), %rdi  # base of output buffer
     mov     %rbx,  %rax             # value to convert
@@ -111,7 +108,7 @@ do_double:
     neg     %rax                   # work with absolute value
 
 itoa_positive:
-    # Special case: value is 0
+    # Special case: value = 0
     test    %rax, %rax
     jnz     itoa_loop
     movb    $'0', (%rdi)
