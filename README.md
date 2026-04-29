@@ -7,9 +7,11 @@ DOCUMENTATION ON THE EXECUTION OF double.s
 Test with any integer value positive or negative including 0.
 
 ex. 
+
 as -o double.o double.s
 
 ld -o double double.o
+
 ./double
 
 Enter a number: 7 (user input)
