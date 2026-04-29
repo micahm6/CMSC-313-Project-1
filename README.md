@@ -8,6 +8,7 @@ Test with any integer value positive or negative including 0.
 
 ex. 
 as -o double.o double.s
+
 ld -o double double.o
 ./double
 
